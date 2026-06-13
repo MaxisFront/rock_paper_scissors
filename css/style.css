@@ -42,8 +42,13 @@ body {
   border-radius: 0.8rem;
   font-family: monospace;
   cursor:pointer;
+  transition-duration: 0.2s;
 }
 
+.bttn_option:active {
+  background-color: darkolivegreen;
+  transform: scale(0.95); /* Shrinks slightly on click */
+}
 
 .bttn_rock {
   padding: 0.8rem 1rem;
@@ -51,17 +56,14 @@ body {
   /* Efecto de sombra interna para simular relieve de roca */
   background-color: rgb(176, 164, 143);
   box-shadow: inset -10px -10px 0px rgba(0,0,0,0.2), 
-              inset 10px 10px 0px rgba(255,255,255,0.2);
+              inset 20px 35px 0px rgba(255,255,255,0.2);
 }
 
 .bttn_paper {
   padding: 0.2rem 1.4rem;
   border-radius: 40% 40% 0px 0px / 30% 30% 0px 0px;
-  background-image: radial-gradient(
-    ellipse at top, 
-    #bfa15f 0%, 
-    #dfc07b 70%
-    );
+  background-color: #BCCCD1;
+  box-shadow: inset 0px -4px 3px rgba(0,0,0, 0.4);
 }
 
 .bttn_scissors {
