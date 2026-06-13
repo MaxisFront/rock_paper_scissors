@@ -5,6 +5,9 @@ function getComputerChoice() {
   return options[indexPosition];
 }
 
+// TODO: Refactorizar getUserChoice() para interacuar con el DOM
+// Quizá al presionar una opción, ejecutar playGame() y enviar el valor del botón
+// TODO: Asignar a cada botón la función getUserChoice()
 function getUserChoice() {
   
   const validAnswers = ["rock", "paper", "scissors"];
@@ -42,10 +45,11 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
 
-  for (let i = 1; i <= 5; i++) {
+  while (humanScore < 5 || computerScore < 5) {
   
-    const humanChoice = getUserChoice();
-    const computerChoice = getComputerChoice();
+    // TODO: Adaptar para recibir respuesta del DOM
+    // const humanChoice = getUserChoice();
+    // const computerChoice = getComputerChoice();
 
     const winner = playRound(humanChoice, computerChoice);
 
@@ -54,7 +58,7 @@ function playGame() {
       i--;
       continue;
     }
-    
+
     if (winner === "human") {
       alert(`You win this round! ${humanChoice} beats ${computerChoice}`);
       humanScore++;
@@ -73,4 +77,4 @@ function playGame() {
 
 }
 
-playGame();
+// playGame();
