@@ -1,5 +1,12 @@
 ( () => {
+  const rockButton = document.querySelector('[data-option="rock"]')
+  const paperButton = document.querySelector('[data-option="paper"]')
+  const scissorsButton = document.querySelector('[data-option="scissors"]')
 
+  rockButton.addEventListener("click", (event) => {
+    alert(event.currentTarget.id)
+  });
+  
   function getComputerChoice() {
     const options = ["rock", "paper", "scissors"];
     const indexPosition = Math.floor((Math.random() * options.length));

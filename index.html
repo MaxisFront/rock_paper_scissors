@@ -14,25 +14,34 @@
       <div class="header__title">
         <p>Rock, paper and Scissors!</p>
       </div>
-      <div class="header__text">
-        <p>You need to select one of the 3 available options! Beat that clanker!</p>
-      </div>
+      <div class="header__text">You need to select one of the 3 available options! 
+        Beat that clanker!</div>
     </div>
 
     <div class="rps">
       
-      <div class="rps__computer-answer">
-        <p data-answer="computer"></p>
+      <div class="rps__playzone">
+        
+        <div class="rps__computer-answer">
+          <div class="election computer-election">Computer Election</div>
+          <pre>▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
+        </div>
+
+        <div class="rps__user-answer">
+          <div class="election user-election">User Election</div>
+          <pre>▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
+        </div>
+
       </div>
 
-      <div class="rps__user-answer">
-        <p data-answer="player"></p>
+      <div class="rps__output">
+        <div class="output__text">Please, select one of the available options!</div>
       </div>
-
+      
       <div class="rps__options">
-        <button class="bttn_option bttn_rock" id="rock">ROCK</button>
-        <button class="bttn_option bttn_paper" id="paper">PAPER</button>
-        <button class="bttn_option bttn_scissors" id="scissors">SCISSORS</button>
+        <button class="bttn_option bttn_rock" data-option="rock" id="rock">ROCK</button>
+        <button class="bttn_option bttn_paper" data-option="paper" id="paper">PAPER</button>
+        <button class="bttn_option bttn_scissors" data-option="scissors" id="scissors">SCISSORS</button>
       </div>
 
     </div>
