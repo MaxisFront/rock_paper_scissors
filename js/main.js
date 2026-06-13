@@ -1,10 +1,19 @@
-( () => {
-  const rockButton = document.querySelector('[data-option="rock"]')
-  const paperButton = document.querySelector('[data-option="paper"]')
-  const scissorsButton = document.querySelector('[data-option="scissors"]')
+// @ts-check
 
-  rockButton.addEventListener("click", (event) => {
-    alert(event.currentTarget.id)
+( () => {
+  
+  // Scores
+  let userScore = 0;
+  let computerScore = 0;
+
+  // DOM elements
+  const playButtons = document.querySelectorAll(".bttn_option");
+  const outputText = document.querySelector(".rps__output-text");
+
+  playButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      playGame(event.currentTarget.id);
+    })
   });
   
   function getComputerChoice() {
@@ -17,23 +26,11 @@
   // Quizá al presionar una opción, ejecutar playGame() y enviar el valor del botón
   // TODO: Asignar a cada botón la función getUserChoice()
 
-  function getUserChoice() {
+  /** @param {string} userChoice 
+   * @param {string} computerChoice */
+  function playRound(userChoice, computerChoice) {  
   
-    const validAnswers = ["rock", "paper", "scissors"];
-    let userInput;
-  
-    do {
-      let rawInput = prompt("Select rock, paper or scissors");
-      // If user pressed "cancel", return an empty string
-      userInput = rawInput ? rawInput.toLowerCase() : "";
-    } while (!userInput || !validAnswers.includes(userInput));
-
-    return userInput;
-  }
-
-  function playRound(humanChoice, computerChoice) {  
-  
-  if (humanChoice === computerChoice) return "draw";
+  if (userChoice === computerChoice) return "draw";
   
     const winsAgainst = {
 
@@ -42,48 +39,59 @@
     scissors: "paper"
     };
 
-    return winsAgainst[humanChoice] === computerChoice ? "human" : "computer";
+    return winsAgainst[userChoice] === computerChoice ? "human" : "computer";
   }
 
+  /** @param {string} optionSelected */
+  function playGame(optionSelected) {
+    
+    // TODO: Adaptar para recibir respuesta del DOM
+    const humanChoice = optionSelected;
+    const computerChoice = getComputerChoice();
+    let endGame = false;
 
+    if (userScore >= 5 || computerScore >= 5) {   
+      endGame = true;
+    }
 
-
-  function playGame() {
-
-    let humanScore = 0;
-    let computerScore = 0;
-
-    while (humanScore < 5 || computerScore < 5) {
-  
-      // TODO: Adaptar para recibir respuesta del DOM
-      // const humanChoice = getUserChoice();
-      // const computerChoice = getComputerChoice();
-
+    if (!endGame) {
       const winner = playRound(humanChoice, computerChoice);
+      checkWinner(winner);
+    } else {
+      gameOver();
+    }
 
+    /** @param {string} winner  */
+    function checkWinner(winner) {
     
       if (winner === "draw") {
-        alert("It's a draw!");
-        i--;
-        continue;
-      }
+        updateOutput("It's a draw!")
 
-      if (winner === "human") {  
-        alert(`You win this round! ${humanChoice} beats ${computerChoice}`);
-        humanScore++;
+      } else if(winner === "human") {  
+        updateOutput(`You win this round! ${humanChoice} beats ${computerChoice}`)
+        userScore++;
+
       } else {
-        alert(`You lost this round! ${computerChoice} beats ${humanChoice}`);
+        updateOutput(`You lost this round! ${computerChoice} beats ${humanChoice}`)
         computerScore++;
       }
+    }
+
+    function gameOver() {
+      const winnerMessage = userScore > computerScore
+        ? `You win! Your Score: ${userScore} | Computer Score: ${computerScore}`  
+        : `You lose! Your Score: ${userScore} | Computer Score: ${computerScore}`
+      
+      updateOutput(winnerMessage);
+    }
+
+    /** @param {string} text  */
+    function updateOutput(text) {
+      if (outputText) {
+        outputText.textContent = text;
+      }
+    }
+
+    
   }
-    const winnerMessage = humanScore > computerScore
-  
-      ? `You win! Your Score: ${humanScore} | Computer Score: ${computerScore}`  
-      : `You lose! Your Score: ${humanScore} | Computer Score: ${computerScore}`
-
-    alert(winnerMessage);
-  }
-
-  // playGame();
-
 })();
