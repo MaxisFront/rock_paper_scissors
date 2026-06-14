@@ -3,15 +3,59 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Rock, Paper and Scissors!</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="js/main.js" defer></script>
   </head>
 
   <body>
 
-    <div class="header__title">
-      <p>Rock, paper and Scissors! (Simple Version)</p>
+    <div class="header">
+      <div class="header__title">
+        <p>Rock, paper and Scissors!</p>
+      </div>
+      <div class="header__text">You need to select one of the 3 available options! 
+        Beat that clanker!</div>
+    </div>
+
+    <div class="rps">
+
+      <div class="rps__score">
+        <div class="score__user" data-score="user">User Score: 0</div>
+        <div class="score__computer" data-score="computer">Computer Score: 0</div>
+      </div>
+      
+      <div class="rps__playzone">
+        
+        <div class="rps__computer-answer">
+          <div class="election computer-election">Computer Election</div>
+          <pre class="icon" data-icon="computer">▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
+        </div>
+
+        <div class="rps__user-answer">
+          <div class="election user-election">User Election</div>
+          <pre class="icon" data-icon="user">▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
+        </div>
+
+      </div>
+
+      <div class="rps__output">
+        <div class="rps__output-text">Please, select one of the available options!</div>
+      </div>
+      
+      <div class="rps__options">
+        
+        <div class="interaction__primary-buttons">
+          <button class="bttn_option bttn_rock" data-option="rock" id="rock">ROCK</button>
+          <button class="bttn_option bttn_paper" data-option="paper" id="paper">PAPER</button>
+          <button class="bttn_option bttn_scissors" data-option="scissors" id="scissors">SCISSORS</button>
+        </div>
+
+        <div class="interaction__secondary-buttons">
+        
+        </div>
+      </div>
+
     </div>
 
   </body>
