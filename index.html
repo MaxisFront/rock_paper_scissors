@@ -19,17 +19,22 @@
     </div>
 
     <div class="rps">
+
+      <div class="rps__score">
+        <div class="score__user" data-score="user">User Score: 0</div>
+        <div class="score__computer" data-score="computer">Computer Score: 0</div>
+      </div>
       
       <div class="rps__playzone">
         
         <div class="rps__computer-answer">
           <div class="election computer-election">Computer Election</div>
-          <pre data-figure="computer">▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
+          <pre class="icon" data-icon="computer">▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
         </div>
 
         <div class="rps__user-answer">
           <div class="election user-election">User Election</div>
-          <pre data-figure="user">▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
+          <pre class="icon" data-icon="user">▉ ▊ ▋ ▌ ▍ ▎ ▏ ▎ ▍ ▌ ▋ ▊ ▉</pre>
         </div>
 
       </div>
@@ -39,9 +44,16 @@
       </div>
       
       <div class="rps__options">
-        <button class="bttn_option bttn_rock" data-option="rock" id="rock">ROCK</button>
-        <button class="bttn_option bttn_paper" data-option="paper" id="paper">PAPER</button>
-        <button class="bttn_option bttn_scissors" data-option="scissors" id="scissors">SCISSORS</button>
+        
+        <div class="interaction__primary-buttons">
+          <button class="bttn_option bttn_rock" data-option="rock" id="rock">ROCK</button>
+          <button class="bttn_option bttn_paper" data-option="paper" id="paper">PAPER</button>
+          <button class="bttn_option bttn_scissors" data-option="scissors" id="scissors">SCISSORS</button>
+        </div>
+
+        <div class="interaction__secondary-buttons">
+        
+        </div>
       </div>
 
     </div>

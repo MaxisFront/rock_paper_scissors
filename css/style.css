@@ -27,7 +27,24 @@ body {
   display:flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
+}
+
+.rps__score {
+  display: flex;
+  justify-content: space-around;
+  min-width: 40%;
+}
+
+.rps__playzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 40%;
+  padding: 2rem 0;
+  text-align: center;
+  border: 1px dashed #ffffff;
 }
 
 .rps__computer-answer, .rps__user-answer {
@@ -36,28 +53,29 @@ body {
   gap: 1rem;
 }
 
-.rps__playzone {
+
+.rps__options {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  min-width: 50%;
-  padding: 2rem 0;
-  text-align: center;
-  border: 1px dashed #ffffff;
+  gap: 1rem;
 }
 
-.rps__options {
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 7.5rem;
+}
+
+
+/* Buttons section */
+
+.interaction__primary-buttons {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-
-
-
-
-
-/* Buttons section */
 
 .bttn_option {
   border-radius: 0.8rem;
@@ -67,7 +85,7 @@ body {
 }
 
 .bttn_option:active {
-  background-color: darkolivegreen;
+  background-color: #6B6B6B;
   transform: scale(0.95); /* Shrinks slightly on click */
 }
 
@@ -96,4 +114,9 @@ body {
   );
   background-color: rgb(87, 104, 145);
   box-shadow: inset 0 -8px 0px rgba(0,0,0,0.2);
+}
+
+.bttn_restart {
+  padding: 0.4rem;
+  background-color: #D6364C;
 }
